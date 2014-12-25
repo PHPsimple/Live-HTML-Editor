@@ -1,11 +1,4 @@
 {
-    "name": "live-html-editor",
-    "main": "app/index.html",
-    "version": "0.1",
-    "keywords": ["html", "live", "editor"],
-    "window": {
-        "title": "Live HTML Editor",
-        "frame": true,
-        "toolbar": false
-    }
+    "name": "live-editor",
+    "main": "app/index.html"
 }

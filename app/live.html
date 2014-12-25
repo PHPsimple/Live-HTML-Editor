@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <style>
+           html, 
+           body {
+               height: 100%;
+               padding: 0;
+               margin: 0;
+           }
+           .menu {
+               width: 200px;
+               height: 100%;
+               background-color: gray;
+               float: left;
+               position: absolute;
+               left: -200px;
+           }
+           .menu ul {
+               list-style: none;
+               padding: 0;
+               margin: 0;
+           }
+           .menu ul li:first-child {
+               text-align: left;
+               color: red;
+               cursor: pointer;
+           }
+           .menu ul li {
+               text-align: center;
+               color: white;
+               font-size: 20px;
+               padding: 5px;
+           }
+           .page {
+               float: left;
+               width: 100%;
+               height: 100%;
+               position: relative;
+               background-color: red;
+           }
+           .burger {
+               width: 40px;
+               height: auto;
+               margin: 10px;
+               cursor: pointer;
+           }
+           .burger div {
+               background-color: black;
+               width: 100%;
+               height: 3px;
+               margin-bottom: 5px;
+               cursor: pointer;
+           }
+        </style>
+    </head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="close">Close</li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="page">
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+        var menu = function() {
+            $('.burger').click(function() {
+                $('.menu').animate({
+                    left: '0px'
+                }, 200);
+                $('.page').animate({
+                    left: '200px'
+                }, 200);
+            });
+            $('.close').click(function() {
+                $('.menu').animate({
+                    left: '-200px'
+                }, 200);
+                $('.page').animate({
+                    left: '0px'
+                }, 200);
+            });
+        }
+        
+        $(document).ready(menu);
+    </script>
+</body>
+</html>
+
+
+
+
+
