@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Live Editor</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="jQuery-UI-Flat-Theme/jquery-ui.min.css">
+    <link rel="stylesheet" href="jQuery-UI-Flat-Theme/jquery-ui.theme.min.css">
     <script>
+        var g = require('nw.gui');
+        onload = function() {
+            g.Window.get().show();
+        }
         process.on('uncaughtException', function(err) {
             console.log(err);
         });
@@ -18,8 +24,68 @@
         <iframe src="live.html" frameborder="1" id="live" seamless></iframe>
     </div>
 
+        <!-- Editor settings -->
+    <div id="editor-settings" title="Editor settings">
+        <form action="#">
+
+            <label for="theme">Themes</label>
+            <select name="theme" id="theme">
+                <option value="github">GitHub</option>
+                <option value="twilight">Twilight</option>
+                <option value="terminal">Terminal</option>
+                <option value="monokai">Monokai</option>
+                <option value="merbivore">Merbivore</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="dawn">Dawn</option>
+                <option value="clouds">Clouds</option>
+                <option value="chrome">Chrome</option>
+                <option value="cobalt">Cobalt</option>
+            </select>
+            <label for="tab-size">Tab size</label>
+            <select name="tab-size" id="tab-size">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+            </select>
+            <label for="soft-tabs">Soft tabs</label>
+            <select name="soft-tabs" id="soft-tabs">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <label for="font-size">Font size</label>
+            <select name="font-size" id="font-size">
+                <option value="12px">12</option>
+                <option value="14px">14</option>
+                <option value="16px">16</option>
+                <option value="18px">18</option>
+                <option value="20px">20</option>
+                <option value="22px">22</option>
+                <option value="24px">24</option>
+            </select>
+            <label for="word-wrapping">Word wrapping</label>
+            <select name="word-wrapping" id="word-wrapping">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+            <label for="line-highlight">Line highlight</label>
+            <select name="line-highlight" id="line-highlight">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+            <label for="read-only">Read only</label>
+            <select name="read-only" id="read-only">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+
+        </form>
+    </div>
+        <!-- Editor settings -->
+
         <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="jQuery-UI-Flat-Theme/jquery-ui.min.js"></script>
     <script src="editor/ace/src-noconflict/ace.js"></script>
     <script src="js/main.js"></script>
         <!-- Scripts -->
