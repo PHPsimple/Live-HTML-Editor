@@ -1,4 +1,8 @@
 {
     "name": "live-editor",
-    "main": "app/index.html"
+    "main": "app/index.html",
+    "window": {
+        "toolbar": false,
+        "show": false
+    }
 }
